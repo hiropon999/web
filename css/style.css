@@ -1,0 +1,524 @@
+@charset "UTF-8";
+
+/* --- タイプ2 デザイン1 --- */
+
+
+/* --- 全体の背景・テキスト --- */
+body {
+min-width: 880px; /* 全体の最小幅 */
+margin: 0;  /* 領域間のスペース余白 */
+padding: 0;　/* 上下左右のpadding 　領域内のスペース */
+background-color: blue; /* 全体の背景色 */
+color: black; /* 全体の文字色 */
+font-size: 80%; /* 全体の文字サイズ */
+}
+
+/* --- 全体のリンクテキスト --- */
+a:link { color: blue; }
+a:visited { color: blue; }
+a:hover { color: blue; }
+a:active { color: red; }
+
+/* --- コンテナ --- */
+#header div.container,
+#content div.container,
+#footer div.container {
+width: 880px; /* コンテナの幅 */
+margin: 0 auto; /* センタリング */
+}
+
+
+/* --- ▼ヘッダ内の設定開始 --- */
+
+/* --- 1ヘッダ --- */
+#header{
+padding-bottom: 1px; /* ヘッダの下パディング  領域内のスペース*/
+background-color: palegreen; /* ヘッダの背景色 */
+}
+
+/* --- 2トップエリア --- */
+#header div.top {
+margin-bottom: 2px; /* トップエリアの下マージン */
+padding: 15px 0px 8px; /* トップエリアのパディング（上、左右、下） 領域内のスペース*/
+background: url(../image/sample.jpg) repeat-x top; /* トップエリアの背景 */
+border-bottom: 1px aqua solid; /* トップエリアの下境界線 */
+}
+
+#header div.top div.container {
+position: relative; /* 相対配置（ガイドメニューのために設定） */
+}
+
+/* --- サイトタイトル --- */
+#header h1.siteTitle,
+#header p.siteTitle {
+margin: 0px 0px 7px; /* サイトタイトルのマージン（上、左右、下）スペース間の領域 */
+font-size: 200%; /* サイトタイトルの文字サイズ */
+}
+/* サイトタイトルの画像 */
+#header h1.siteTitle img,
+#header p.siteTitle img {
+border: none;
+}
+
+/* --- キャッチフレーズ --- */
+#header p.catch {
+margin: 0; /* スペース間の領域 */
+}
+#header p.catch strong {
+font-weight: 900; /* 文字の太さ（ノーマル） */
+}
+
+/* --- ガイドメニュー --- */
+#header ul.guide {
+position: absolute; /* 絶対配置 relative だと位置がずれる */
+top: 5px; /* 上からの距離 */
+right: 10px; /* 右からの距離 */
+margin: 0; /* スペース間の領域 */
+padding: 0; /* スペース内の領域 */
+list-style-type: none; /* 文字の前に何かつけるかの設定　例えば 「・」 */
+}
+
+/* メニュー項目 */
+#header ul.guide li {
+/* 背景にマーカー */
+display: inline;
+padding: 0 7px 0 13px; /* 項目のパディング（上右下左） */
+background: aqua;
+color: white inherit; /* 項目の背景（マーカー） */
+}
+
+/* --- オープニングエリア（トップページ） --- */
+
+/*  黒線で２本線 */
+#header div.opening {
+padding: 8px 0; /* オープニングエリアのパディング（上下、左右）スペース内の領域 */
+background: white url(../image/worldmap.jpg) repeat top; /* オープニングエリアの背景 top で範囲指定*/
+border-bottom: 3px black double; /* オープニングエリアの下境界線 */
+}
+
+/* オープニングエリア内の見出し */
+#header div.opening h2 {
+margin: 0; /* スペース間の領域 */
+}
+
+/* --- ヘッダメニュー --- */
+#header div.nl {
+background: white url(../image/sample.jpg) repeat-x top; /* ヘッダメニューの背景 横軸に繰り返す*/
+border-top: 2px white solid; /* ヘッダメニューの上境界線 */
+border-bottom: 2px white solid; /* ヘッダメニューの下境界線 */
+}
+
+/* --- メニュー本体 --- */
+#header div.nl ul {
+width: 878px; /* メニュー本体の幅（コンテナの幅から2px引いた値） */
+margin: 0; /* スペース間の領域 */
+padding: 0; /* スペース内の領域 */
+border-left: 1px blue solid; /* メニュー本体の左境界線 */
+border-right: 1px blue solid; /* メニュー本体の右境界線 */
+list-style-type: none; /* [・]などを表示させない */
+text-align: center; /* text を中央寄りにする */
+}
+
+/* 1メニュー項目 */
+#header div.nl li {
+width: 146px; /* 項目の幅 縦の幅*/
+float: left; /* 左に寄せる right にすると位置が反転する*/
+line-height: 100%; /* ここも項目の縦の幅 */
+}
+
+/* 2最初の項目と最後の項目 */
+#header div.nl li.first,
+#header div.nl li.last {
+width: 147px; /* 項目の幅 左、右境界線の分 + 1 している */
+}
+
+/*  3リンクエリア */
+#header div.nl li a {
+display: block; /* ブロック要素として配置する */
+position: relative; /* IE6用 */
+padding: 8px 2px 5px; /* リンクエリアのパディング（上、左右、下）スペース内の領域 */
+border-left: 1px blue solid; /* リンクエリアの左境界線 */
+border-right: 1px blue solid; /* リンクエリアの右境界線 */
+text-decoration: underline; /* テキストの下線（なし） */
+font-weight: bold; /* 文字の太さ（太字） */
+color: blue; /* 文字色 */
+}
+
+/* 4英字部分 */
+#header div.nl li a span.en {
+display: block;
+margin-top: 3px; /* 英字部分の上マージン スペース間の領域*/
+font-size: 85%; /* 英字の文字サイズ */
+font-weight: normal; /* 文字の太さ（ノーマル） */
+color: lime; /* 英字の文字色 */
+}
+
+/* 5ポイント時とアクティブ時の設定 */
+#header div.nl li a:hover,
+#header div.nl li.active a {
+background: dodgerblue; /* ポイント時（アクティブ時）の背景 */
+/*background: dodgerblue url(../image/hor_menu6_on.gi) repeat-x top; /* ポイント時（アクティブ時）の背景 */*/
+}
+#header div.nl li a:hover span.en,
+#header div.nl li.active span.en {
+color: lime; /* ポイント時（アクティブ時）の英字の文字色 */
+}
+
+
+/* --- トピックパス（下層ページ） --- */
+#header div.topicPath {
+margin: 0; /* スペース間の領域 */
+padding: 7px 2px; /* トピックパスのパディング（上下、左右） スペース内の領域*/
+background-color: red; /* トピックパスの背景色 */
+}
+#header div.topicPath ol {
+margin: 0; /* スペース間の領域 */
+padding: 0; /* スペース内の領域 */
+list-style-type: none; /* 無駄なデザインにしない */
+}
+
+/* リスト項目 */
+#header div.topicPath li {
+display: inline;
+}
+
+/* リンクエリア */
+#header div.topicPath li a {
+padding-right: 12px; /* リンクエリアの右パディング */
+background: url(../image/exit.png) no-repeat right ; /* リンクエリアの背景（区切り記号） */
+}
+
+/* --- 罫線 --- */
+#header hr.none {
+display: none; /* 表示形式（なし） */
+}
+
+/* --- ▲ヘッダ内の設定終了 --- */
+
+
+/* --- ▼コンテンツ内の設定開始 --- */
+
+/* --- 1コンテンツ --- */
+#content {
+padding: 35px 0px 10px; /* コンテンツ内のパディング（上、左右、下） */
+background: white url(../image/exit.png) repeat-x 0-5px; /* コンテンツの背景 */
+}
+
+
+/* --- ▼メインカラム内の設定開始 --- */
+
+/* --- 1メインカラム --- */
+#main {
+float: right;
+width: 660px; /* メインカラムの幅 */
+}
+
+/* --- 2ページタイトル（下層ページ） --- */
+#main h1.pageTitle {
+margin: 0px 0px 15px 20px; /* ページタイトルのマージン（上右下左） */
+padding: 0px 5px; /* ページタイトルのパディング（上下、左右）スペース内の領域 */
+font-size: 180%; /* ページタイトルの文字サイズ */
+color: red; /* ページタイトルの文字色 */
+}
+
+/* --- セクション（共通設定） --- */
+#main div.section {
+margin: 0px 0px 2em 20px; /* セクションのマージン（上右下左） */
+}
+
+/* --- 標準セクション --- */
+/* --- 1見出しエリア --- */
+#main div.normal div.heading {
+margin: 0px 0px 1em; /* 見出しエリアのマージン（上、左右、下）スペース間の領域 */
+padding: 7px 11px; /* 見出しエリアのパディング（上下、左右）スペース内の領域 */
+background: white url(../image/sample2.jpg ) repeat-y right; /* 見出しエリアの背景 */
+opacity: 0.8;
+}
+/* 2見出し */
+#main div.normal h2 {
+margin: 0; /* スペース間の領域 */
+padding-left: 16px; /* 見出しの左パディング  スペース内の領域 */
+background: url(../image/sample2.jpg) no-repeat 0px 0.15em ;/* 見出しの背景（マーク） */
+
+font-size: 130%; /* 見出しの文字サイズ */
+line-height: 100%; /* 行の高さ */
+}
+
+/* 段落 */
+#main div.normal p {
+margin: 10px 10px 1em; /* 段落のマージン（上、左右、下）スペース間の領域  */
+line-height: 160%; /* 行の高さ */
+}
+
+/* --- 強調セクション --- */
+#main div.emphasis {
+margin-bottom: 3em; /* セクションの下マージン（上書き） */
+padding: 0.8em 10px 0; /* セクションのパディング（上、左右、下） */
+background: url(../image/emphasis_back2.gif) no-repeat top; /* セクションの背景 */
+}
+ /* 見出し */
+#main div.emphasis h2 {
+margin: 0 0 0.8em; /* 見出しのマージン（上、左右、下） */
+font-size: 130%; /* 見出しの文字サイズ */
+color: #000000; /* 見出しの文字色 */
+}
+ /* 段落 */
+#main div.emphasis p {
+margin: 0 0 1em; /* 段落のマージン（上、左右、下） */
+line-height: 150%; /* 行の高さ */
+}
+
+/* --- 新着情報（トップページ） --- */
+#main div.update dl {
+width: 620px; /* 新着情報の幅（メインカラムの幅から40px引いた値） */
+margin: 0 auto; /* センタリング */
+}
+/* 日付エリア */
+#main div.update dt {
+width: 6.7em; /* 日付エリアの幅 */
+float: left;
+padding: 7px 0 6px 3px; /* 日付エリアのパディング（上右下左） */
+line-height: 120%; /* 行の高さ */
+}
+/* 本文エリア */
+#main div.update dd {
+margin: 0;
+padding: 7px 3px 6px 6.6em; /* 本文エリアのパディング（上右下左） */
+border-bottom: 1px #c0c0c0 dotted; /* 本文エリア下境界線 */
+line-height: 120%; /* 行の高さ */
+}
+
+/* --- ▲メインカラム内の設定終了 --- */
+
+
+/* --- ▼サイドバー内の設定開始 --- */
+
+/* --- 1サイドバー --- */
+#nav {
+float: right;
+width: 220px; /* サイドバーの幅 */
+}
+
+/* --- 2セクション（共通設定） --- */
+#nav div.section {
+margin-bottom: 10px; /* スペース間セクションの下マージン */
+}
+/* 3見出し */
+#nav div.section h2 {
+margin: 0px 0px 0.7em; /* 見出しのマージン（上、左右、下）スペース間の領域 */
+padding: 4px 6px; /* 見出しのパディング（上下、左右）スペース内部の領域 */
+font-size: 120%; /* 見出しの文字サイズ */
+}
+/* 4段落 */
+#nav div.section p {
+margin: 0px 4px 0.6em; /* 段落のマージン（上、左右、下）スペース間の領域 */
+line-height: 130%; /* 行の高さ */
+}
+
+/* --- 1標準セクション（グレー） --- */
+#nav div.normal {
+padding: 2px; /* セクションのパディング スペース内部の領域 */
+background-color: white; /* セクションの背景色 */
+border: 1px black solid; /* セクションの境界線 */
+}
+/* 2見出し */
+#nav div.normal h2 {
+background-color: white; /* 見出しの背景色 */
+}
+
+/* --- 1強調セクション1（水色） --- */
+#nav div.emphasis {
+padding: 2px; /* セクションのパディング */
+border: 1px lime solid; /* セクションの境界線 */
+}
+#nav div.emphasis div.inner {
+padding: 5px; /* 内部space間のパディング */
+background: deepskyblue; /* 内部の背景 */
+}
+/* 2見出し */
+#nav div.emphasis h2 {
+background-color: white; /* 見出しの背景色 */
+}
+
+/* --- 1強調セクション2（グリーン） --- */
+#nav div.strong {
+padding: 2px; /* セクションのパディング */
+border: 1px green solid; /* セクションの境界線 */
+}
+#nav div.strong div.inner {
+padding: 5px; /* 内部のパディング */
+background: springgreen; /* 内部の背景 */
+}
+/* 2見出し */
+#nav div.strong h2 {
+background-color: white; /* 見出しの背景色 */
+}
+
+/* --- サブメニュー --- */
+/* 1サブメニュー内の見出し */
+#nav div.subMenu h2 {
+margin: 0px 0px 2px; /* 見出しのマージン（上書き）スペース間の領域 */
+padding: 20px 9px 6px; /* 見出しのパディング（上書き）スペース内の領域 */
+border-bottom: 1px black double; /* 見出しの下境界線 */
+}
+/* 2メニューエリア */
+#nav div.subMenu ul.nl {
+margin: 0; /* スペース間の領域 */
+padding: 0; /* スペース内の領域 */
+list-style-type: none; /* 無駄な文字を打たない */
+}
+/* 3メニュー項目 */
+#nav div.subMenu ul.nl li {
+margin-bottom: 2px; /* 項目の下マージン */
+border-bottom: 1px #4e83b3 dotted; /* 項目の下境界線 */
+}
+/* リンクエリア */
+#nav div.subMenu ul.nl li a {
+display: block;
+position: relative; /* IE6用 */
+padding: 12px 10px; /* リンクエリアのパディング（上下、左右） */
+background: #ebf0f3 url(../image/ver_menu5_6off.gif) repeat-y right; /* リンクエリアの背景 */
+color: red; /* 文字色 */
+text-decoration: none; /* テキストの下線（なし） */
+}
+/* ポイント時の設定 */
+#nav div.subMenu ul.nl li a:hover {
+background: #ebf0f3 url(../image/ver_menu5_6on.gif) repeat-y right; /* ポイント時の背景 */
+text-decoration: underline; /* テキストの下線（あり） */
+}
+
+/* --- 1お問い合わせ --- */
+#nav div.contact {
+padding-bottom: 0.3em; /* セクションの下パディング */
+}
+/* 2段落 */
+#nav div.contact p {
+margin-bottom: 0.4em; /* 段落の下マージン（上書き） */
+}
+/* 3電話番号 */
+#nav div.contact p.tel {
+margin-bottom: 0.1em; /* 段落の下マージン（上書き） */
+font-size: 150%; /* 電話番号の文字サイズ */
+font-weight: bold; /* 文字の太さ（太字） */
+color: black; /* 電話番号の文字色 */
+}
+/* 4フォームへのリンク */
+#nav div.contact p.form {
+margin-top: 0.7em; /* 段落の上マージン（上書き） */
+padding: 3px; /* 段落のパディング（白フチの幅） */
+background-color: white; /* 段落の背景色（白フチの色） */
+border: 5px double; /* 段落の境界線（太さ、スタイル） */
+border-color: purple; /* 段落の境界線色（上右下左） */
+text-align: center;
+line-height: 6; /* 行の高さ（上書き） */
+}
+
+/* 5リンクエリア */
+#nav div.contact p.form a {
+display: block;
+position: relative; /* IE6用 */
+padding: 12px 2px; /* リンクエリアのパディング（上下、左右） */
+background: url(../image/exit.png) repeat-x top; /* リンクエリアの背景 */
+font-size: 110%; /* リンクエリアの文字サイズ */
+font-weight: bold /* 文字の太さ（太字） */
+color: black; /* リンクエリアの文字色 */
+text-decoration: none; /* テキストの下線（なし） */
+}
+/* 6ポイント時の設定 */
+#nav div.contact p.form a:hover {
+background: white url(../image/sample2.jpg) repeat-x top; /* ポイント時の背景 */
+}
+
+/* --- ▲サイドバー内の設定終了 --- */
+
+
+/* --- 罫線 --- */
+#content hr.clear {
+clear: right; /* 右フロートのクリア */
+width: 100%;
+margin: 0;
+visibility: hidden; /* 非表示 */
+}
+
+/* --- ▲コンテンツ内の設定終了 --- */
+
+
+/* --- ▼フッタ内の設定開始 --- */
+
+/* --- 1フッタ --- */
+#footer {
+padding: 20px 0; /* フッタのパディング（上下、左右） スペース内の領域 */
+background: white url(../image/exit.png)  repeat; /* フッタの背景 */
+border-top: 10px black double; /* フッタの上境界線 */
+border-bottom: 10px black double; /* フッタの下境界線 */
+}
+
+/* --- 2フッタメニュー --- */
+#footer ul.nl {
+margin: 0px 0px 10px; /* フッタメニューのマージン（上、左右、下） スペース間の領域 */
+padding: 0; /* スペース内の領域 */
+list-style-type: none; /* 無駄なデザインはしない */
+}
+/* --- 3メニュー項目 --- */
+#footer ul.nl li {
+padding: 0px 7px 0px 11px; /* 項目のパディング（上右下左）スペース内領域 */
+background-color: white; /* 項目の背景（マーカー） */
+display: inline;
+}
+/* 4ガイドメニュー */
+#footer ul.guide {
+margin: 0px 0px 30px; /* ガイドメニューのマージン（上書き）スペース間領域 */
+}
+
+/* --- 5アドレス・コピーライト --- */
+#footer address {
+font-style: italic; /* フォントスタイル */
+line-height: 140%; /* 行の高さ */
+}
+
+/* --- ▲フッタ内の設定終了 --- */
+
+
+/* --- ▼その他の設定開始 --- */
+
+/* --- clearfix --- */
+.clearFix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+.clearFix {
+min-height: 1px;
+}
+
+/* --- ▲その他の設定終了 --- */
+
+/* 上下に動く文字の設定 */
+.photo {
+	width:	100%;
+	margin:	0;
+	padding: 0;
+	position: relative;
+	overflow: hidden;
+}
+.photo img {
+	width:	100%;
+}
+.text {
+	position:absolute;
+	width:	100%;
+	height:	12%;
+	font-size:180%;
+	text-align:center;
+	top: 0px;
+	margin:	0;
+	color:	deepskyblue;
+	background:rgba(0,0,0,0.4);
+	animation: slide 4s ease-out 1s infinite alternate;
+}
+@keyframes slide {
+	0% { top: 0px; }
+	100% { top: 86%; }
+}
