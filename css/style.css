@@ -185,7 +185,7 @@ display: inline;
 /* リンクエリア */
 #header div.topicPath li a {
 padding-right: 12px; /* リンクエリアの右パディング */
-background: url(../image/exit.png) no-repeat right ; /* リンクエリアの背景（区切り記号） */
+background: url(../image/exit.png)  no-repeat right ; /* リンクエリアの背景（区切り記号） */
 }
 
 /* --- 罫線 --- */
@@ -201,7 +201,7 @@ display: none; /* 表示形式（なし） */
 /* --- 1コンテンツ --- */
 #content {
 padding: 35px 0px 10px; /* コンテンツ内のパディング（上、左右、下） */
-background: white url(../image/exit.png) repeat-x 0-5px; /* コンテンツの背景 */
+background: white url(../image/sea.jpg) repeat-x 0-320px; /* コンテンツの背景 */
 }
 
 
